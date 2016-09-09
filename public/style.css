@@ -1,0 +1,12 @@
+.card {
+  border: 1px lightgray solid;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.darkred {
+  color: white;
+  background-color: darkred;
+}

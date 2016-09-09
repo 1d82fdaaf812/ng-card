@@ -1,0 +1,26 @@
+{
+  "name": "ng-card",
+  "version": "1.0.0",
+  "description": "Personal card ",
+  "main": "app.js",
+  "scripts": {
+    "start": "json-server db.json -w true -p 4801",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmartz86/ng-card.git"
+  },
+  "keywords": [
+    "card"
+  ],
+  "author": "Daniel Martinez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmartz86/ng-card/issues"
+  },
+  "homepage": "https://github.com/dmartz86/ng-card#readme",
+  "dependencies": {
+    "json-server": "^0.8.19"
+  }
+}
