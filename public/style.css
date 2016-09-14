@@ -1,5 +1,7 @@
 .card {
   border: 1px lightgray solid;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .card-image {
@@ -9,4 +11,13 @@
 .darkred {
   color: white;
   background-color: darkred;
+}
+
+.lightgreen {
+  color: white;
+  background-color: darkgreen;
+}
+
+.card-text {
+  
 }

@@ -1,0 +1,9 @@
+<div class="col-md-6 card" ng-repeat="user in cc.users">
+  <h1 ng-bind="$index - '1'"></h1>
+  <avatar-widget name="cc.parseName(user.name)" index="$index"></avatar-widget>
+  <phone-widget></phone-widget>
+  <location-widget></location-widget>
+  <site-widget></site-widget>
+  <email-widget></email-widget>
+  <network-widget></network-widget>
+</div>
