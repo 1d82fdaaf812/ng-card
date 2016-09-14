@@ -16,18 +16,8 @@ class CardController {
   }
 
   $onInit() {
-    const user = {
-      name: 'VP',
-      character: 'Coding Club',
-      date: new Date().getTime()
-    };
-    this.$http.post('/users', user)
-    .then(() => this.$http.get('/users'))
+    this.$http.get('/users')
       .then((res) => this.users = res.data);
-  }
-
-  parseName(name) {
-    return `The name is ${name}`;
   }
 }
 
@@ -56,23 +46,20 @@ class AvatarWidget extends Widget {
   constructor() {
     super();
     this.scope = {
-      name: '&'
+      index: '='
     };
     this.controller = AvatarWidgetController;
   }
 }
 
 class AvatarWidgetController extends WidgetController {
-  constructor($scope, $log) {
+  constructor($scope) {
     super('fa fa-user', 'Who am I', 'darkred');
-    this.$log = $log;
     this.$scope = $scope;
   }
 
   $onInit() {
-    this.label = this.$scope.name;
     this.index = this.$scope.index;
-    this.$log.log(this.name);
   }
 }
 
@@ -98,8 +85,7 @@ class LocationWidget extends Widget {
 
 class LocationWidgetController extends WidgetController {
   constructor() {
-    super();
-    this.klass = 'black';
+    super('fa fa-map-marker', 'Find me');
   }
 }
 
@@ -112,8 +98,7 @@ class SiteWidget extends Widget {
 
 class SiteWidgetController extends WidgetController {
   constructor() {
-    super();
-    this.klass = 'gold';
+    super('fa fa-map-marker', 'Visit me');
   }
 }
 
@@ -126,8 +111,7 @@ class EmailWidget extends Widget {
 
 class EmailWidgetController extends WidgetController {
   constructor() {
-    super();
-    this.klass = 'blue';
+    super('fa fa-envelope-o', 'Write me');
   }
 }
 
@@ -140,14 +124,13 @@ class NetworkWidget extends Widget {
 
 class NetworkWidgetController extends WidgetController {
   constructor() {
-    super();
-    this.klass = 'magenta';
+    super('fa fa-comment-o', 'Follow me');
   }
 }
 
-angular.module('pesonalCardApp', [])
+angular.module('directoryApp', [])
   .run(function ($http) {
-    $http.defaults.headers.common.ByVal = 'pesonalCardApp';
+    $http.defaults.headers.common.NgApp = 'directoryApp';
   })
   .directive('card', Card)
   .directive('widget', Widget)
